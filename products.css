@@ -413,6 +413,7 @@ When screen is small - mainly optimised for mobile phones and tablets. */
     h2 {
         background-color: rgba(255, 255, 255, 0.247);
         max-width: 200px;
+        text-align: center;
     }
     
     nav ul li {

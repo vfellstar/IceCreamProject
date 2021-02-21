@@ -805,16 +805,14 @@ Version 1.2
                 cost += costOfset;
                 document.getElementById("totalCost").innerHTML = totalCost + parseFloat(Number(cost)).toFixed(2);
             }
-
-            function mapToJson(map) {
-                if (map != null) {
-                    return JSON.stringify(orderMap);
-                } else {
-                    return 0;
-                }
+        }
+        function mapToJson(map) {
+            if (map != null) {
+                return JSON.stringify(orderMap);
+            } else {
+                return 0;
             }
         }
-
         /**
          * This is an inline script
          * Make it so it submits the order correctly when you push submit!
