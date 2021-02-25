@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 
-<!-- 
-This file and all of its contents were created by Vincent Taylor on 15/02/2021.
-
-In-line scripts are used as external scripts led to "NetworkError when attempting fetch resource" Source map error on certain browsers.
-The scripts are at the bottom of this page.
+<!--
+The submit button sends a JSON map to 'orders.php'. key is the name of the product, value is the flavour.
+HOWEVER! the final key of the map is 'totalOrderCost' its value being the total amount it costs!
+So the people doing HorsePay have to know this to get the value to charge the people.
 
 If there is time later i will attempt to fix this and move everything to an external script. 
 For now, getting the site to work is priority
 
-Updated Functions - Added the ability to view the total in the basket - Vincent Taylor 21/02/2021
+This file and all of its contents were created by Vincent Taylor on 15/02/2021.
+
 Version 1.2
+
+Updated Functions - Added the ability to view the total in the bottom of the page - Vincent Taylor 21/02/2021.
+Updated Functions - Sends JSON object to 'orders.php' - 25/02/2021.
 -->
 
 <html lang="en-GB">
@@ -21,6 +24,30 @@ Version 1.2
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="products.css" />
+    <script>
+        /**
+         * This is a function that will send a JSON object to the orders.php file.
+         * Modified from Dan's PHP tutorials
+         * */
+        function sendToServer(jsonObject) {
+            let request = new XMLHttpRequest();
+            request.open('POST', 'orders.php', true);
+            request.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) // means everything is alright - Source: https://stackoverflow.com/questions/17561463/readystate-vs-status-200/26087812
+                {
+                    document.getElementById('orderComplete').innerHTML = this.responseText;
+                }
+            };
+
+            request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            request.send(jsonObject);
+            return false;
+        }
+
+
+
+
+    </script>
 </head>
 
 <body>
@@ -41,7 +68,7 @@ Version 1.2
             </nav>
         </header>
         <main>
-            <form method="POST" action="" id="selectGoods">
+            <form method="POST" action="orders.php" onsubmit="sendToServer(orderMap)" id="selectGoods">
                 <!--Need to make a script and place that here in the action bit-->
                 <section id="vanilla">
                     <h2>
@@ -49,7 +76,7 @@ Version 1.2
                     </h2>
 
                     <ul>
-                        <li>Small <select name="size" id="vanillaS">
+                        <li><label for="vanillaS">Small </label><select name="vanillaSAmount" id="vanillaS">
                                 <option value="0" selected >0</option>
                                 <option value="1" >1</option>
                                 <option value="2" >2</option>
@@ -62,7 +89,7 @@ Version 1.2
                                 <option value="9" >9</option>
                     </select></li>
 
-                        <li>Medium <select name="size" id="vanillaM">
+                        <li><label for="vanillaM">Medium </label><select name="vanillaMAmount" id="vanillaM">
                         <option value="0" selected >0</option>
                         <option value="1" >1</option>
                         <option value="2" >2</option>
@@ -75,7 +102,7 @@ Version 1.2
                         <option value="9" >9</option>
                     </select></li>
 
-                        <li>Large <select name="size" id="vanillaL">
+                        <li><label for="vanillaL">Large </label><select name="vanillaLAmount" id="vanillaL">
                         <option value="0" selected>0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -88,7 +115,7 @@ Version 1.2
                         <option value="9">9</option>
                     </select></li>
 
-                        <li>Extra Large <select name="size" id="vanillaXL">
+                        <li><label for="vanillaXL">Extra Large </label><select name="vanillaXLAmount" id="vanillaXL">
                         <option value="0" selected>0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -101,7 +128,7 @@ Version 1.2
                         <option value="9">9</option>
                     </select></li>
 
-                        <li>XX Large <select name="size" id="vanillaXXL">
+                        <li><label for="vanillaXXL">XX Large </label><select name="vanillaXXLAmount" id="vanillaXXL">
                         <option value="0" selected>0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -121,7 +148,7 @@ Version 1.2
                         Honeycomb
                     </h2>
                     <ul>
-                        <li>Small <select name="size" id="honeycombS">
+                        <li><label for="honeycombS">Small </label><select name="honeycombSAmount" id="honeycombS">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -134,7 +161,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>Medium <select name="size" id="honeycombM">
+                        <li><label for="honeycombM">Medium </label><select name="honeycombMAmount" id="honeycombM">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -147,7 +174,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>Large <select name="size" id="honeycombL">
+                        <li><label for="honeycombL">Large </label><select name="honeycombLAmount" id="honeycombL">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -160,7 +187,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>Extra Large <select name="size" id="honeycombXL">
+                        <li><label for="honeycombXL">Extra Large </label><select name="honeycombXLAmount" id="honeycombXL">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -173,7 +200,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>XX Large <select name="size" id="honeycombXXL">
+                        <li><label for="honeycombXXL">XX Large </label><select name="honeycombXXLAmount" id="honeycombXXL">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -193,7 +220,7 @@ Version 1.2
                         Rum and Raisin
                     </h2>
                     <ul>
-                        <li>Small <select name="size" id="rum_and_raisinS">
+                        <li><label for="rum_and_raisinS">Small </label><select name="rum_and_raisinSAmount" id="rum_and_raisinS">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -206,7 +233,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>Medium <select name="size" id="rum_and_raisinM">
+                        <li><label for="rum_and_raisinM">Medium </label><select name="rum_and_raisinMAmount" id="rum_and_raisinM">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -219,7 +246,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>Large <select name="size" id="rum_and_raisinL">
+                        <li><label for="rum_and_raisinL">Large </label><select name="rum_and_raisinLAmount" id="rum_and_raisinL">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -232,7 +259,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>Extra Large <select name="size" id="rum_and_raisinXL">
+                        <li><label for="rum_and_raisinXL">Extra Large </label><select name="rum_and_raisinXLAmount" id="rum_and_raisinXL">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -245,7 +272,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>XX Large <select name="size" id="rum_and_raisinXXL">
+                        <li><label for="rum_and_raisinXXL">XX Large </label><select name="rum_and_raisinXXLAmount" id="rum_and_raisinXXL">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -266,7 +293,7 @@ Version 1.2
                         Mint
                     </h2>
                     <ul>
-                        <li>Small <select name="size" id="mintS">
+                        <li><label for="mintS">Small </label><select name="mintSAmount" id="mintS">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -279,7 +306,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>Medium <select name="size" id="mintM">
+                        <li><label for="mintM">Medium </label><select name="mintMAmount" id="mintM">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -292,7 +319,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>Large <select name="size" id="mintL">
+                        <li><label for="mintL">Large </label><select name="mintLAmount" id="mintL">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -305,7 +332,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>Extra Large <select name="size" id="mintXL">
+                        <li><label for="mintXL">Extra Large </label><select name="mintXLAmount" id="mintXL">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -318,7 +345,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>XX Large <select name="size" id="mintXXL">
+                        <li><label for="mintXXL">XX Large </label><select name="mintXXLAmount" id="mintXXL">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -339,7 +366,7 @@ Version 1.2
                         Cherry
                     </h2>
                     <ul>
-                        <li>Small <select name="size" id="cherryS">
+                        <li><label for="cherryS">Small </label><select name="cherrySAmount" id="cherryS">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -352,7 +379,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>Medium <select name="size" id="cherryM">
+                        <li><label for="cherryM">Medium </label><select name="cherryMAmount" id="cherryM">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -365,7 +392,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>Large <select name="size" id="cherryL">
+                        <li><label for="cherryL">Large </label><select name="cherryLAmount" id="cherryL">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -378,7 +405,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>Extra Large <select name="size" id="cherryXL">
+                        <li><label for="cherryXL">Extra Large </label><select name="cherryXLAmount" id="cherryXL">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -391,7 +418,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>XX Large <select name="size" id="cherryXXL">
+                        <li><label for="cherryXXL">XX Large </label><select name="cherryXXLAmount" id="cherryXXL">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -412,7 +439,7 @@ Version 1.2
                         Chocolate
                     </h2>
                     <ul>
-                        <li>Small <select name="size" id="chocolateS">
+                        <li><label for="chocolateS">Small </label><select name="chocolateSAmount" id="chocolateS">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -425,7 +452,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>Medium <select name="size" id="chocolateM">
+                        <li><label for="chocolateM">Medium </label><select name="chocolateMAmount" id="chocolateM">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -438,7 +465,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>Large <select name="size" id="chocolateL">
+                        <li><label for="chocolateL">Large </label><select name="chocolateLAmount" id="chocolateL">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -451,7 +478,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>Extra Large <select name="size" id="chocolateXL">
+                        <li><label for="chocolateXL">Extra Large </label><select name="chocolateXLAmount" id="chocolateXL">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -464,7 +491,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>XX Large <select name="size" id="chocolateXXL">
+                        <li><label for="chocolateXXL">XX Large </label><select name="chocolateXXLAmount" id="chocolateXXL">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -485,7 +512,7 @@ Version 1.2
                         Salted Caramel
                     </h2>
                     <ul id="scList">
-                        <li>Small <select name="size" id="salted_caramelS">
+                        <li><label for="salted_caramelS">Small </label><select name="salted_caramelSAmount" id="salted_caramelS">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -497,7 +524,7 @@ Version 1.2
                             <option value="8">8</option>
                             <option value="9">9</option>
                         </select></li>
-                        <li>Medium <select name="size" id="salted_caramelM">
+                        <li><label for="salted_caramelM">Medium </label><select name="salted_caramelMAmount" id="salted_caramelM">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -509,7 +536,7 @@ Version 1.2
                             <option value="8">8</option>
                             <option value="9">9</option>
                         </select></li>
-                        <li>Large <select name="size" id="salted_caramelL">
+                        <li><label for="salted_caramelL">Large </label><select name="salted_caramelLAmount" id="salted_caramelL">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -521,7 +548,7 @@ Version 1.2
                             <option value="8">8</option>
                             <option value="9">9</option>
                         </select></li>
-                        <li>Extra Large <select name="size" id="salted_caramelXL">
+                        <li><label for="salted_caramelXL">Extra Large </label><select name="salted_caramelXLAmount" id="salted_caramelXL">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -533,7 +560,7 @@ Version 1.2
                             <option value="8">8</option>
                             <option value="9">9</option>
                         </select></li>
-                        <li>XX Large <select name="size" id="salted_caramelXXL">
+                        <li><label for="salted_caramelXXL">XX Large </label><select name="salted_caramelXXLAmount" id="salted_caramelXXL">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -556,7 +583,7 @@ Version 1.2
                         Strawberry
                     </h2>
                     <ul>
-                        <li>Small <select name="size" id="strawberryS">
+                        <li><label for="strawberryS">Small </label><select name="strawberrySAmount" id="strawberryS">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -569,7 +596,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>Medium <select name="size" id="strawberryM">
+                        <li><label for="strawberryM">Medium </label><select name="strawberryMAmount" id="strawberryM">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -582,7 +609,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>Large <select name="size" id="strawberryL">
+                        <li><label for="strawberryL">Large </label><select name="strawberryLAmount" id="strawberryL">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -595,7 +622,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>Extra Large <select name="size" id="strawberryXL">
+                        <li><label for="strawberryXL">Extra Large </label><select name="strawberryXLAmount" id="strawberryXL">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -608,7 +635,7 @@ Version 1.2
                             <option value="9">9</option>
                         </select></li>
 
-                        <li>XX Large <select name="size" id="strawberryXXL">
+                        <li><label for="strawberryXXL">XX Large </label><select name="strawberryXXLAmount" id="strawberryXXL">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -659,6 +686,8 @@ Version 1.2
                 </div>
 
             </form>
+            <div id="orderComplete"></div>
+
         </main>
         <footer>
             <p>Cavalllo Traditional Italian Ice Cream 2021 - page designed by Vincent Taylor</p>
@@ -700,7 +729,6 @@ Version 1.2
         function completeReset() {
             document.getElementById("selectGoods").reset();
             resetPanel();
-
         }
 
         /**
@@ -747,6 +775,7 @@ Version 1.2
             for (let i = 0; i < elements.length; i++) {
                 orderMap.set(flavourAndSize[i], elements[i].value)
             }
+
             for (let [key, value] of orderMap) {
                 if (value > 0) {
                     orderedGoods.set(key, value);
@@ -804,6 +833,9 @@ Version 1.2
                 toDisplay += "</table>";
                 cost += costOfset;
                 document.getElementById("totalCost").innerHTML = totalCost + parseFloat(Number(cost)).toFixed(2);
+
+                orderMap.set("totalOrderCost", costOfset);
+
             }
         }
         function mapToJson(map) {
