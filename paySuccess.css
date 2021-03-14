@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Patrick+Hand&display=swap');
+
+body{
+    background-image: url("https://i.loli.net/2021/03/11/GNuCzD6of5cFS28.jpg");
+    padding: 0 10%;
+    font-family: 'Lobster';
+    background-size:100% 100%;
+    font-size: 12pt;
+    color: whitesmoke;
+}
+
+.Success{
+    width:360px;
+    padding: 10% 0 0;
+    margin: auto;
+}
+form{
+    position: relative;
+    z-index: 1;
+    /*background: pink;*/
+    background-image: linear-gradient(rgba(169,168,184,0.5),rgba(169,168,184,0.5));
+    max-width: 360px;
+    margin: 0 auto;
+    padding:45px;
+}
+
+#countDown{
+    font-size: large;
+    font-family: 'Patrick Hand', cursive;
+    font-weight:bold;
+}
+
+#message{
+    font-family: 'Lobster', cursive;
+    font-size: x-large;
+    text-align: center;
+}
+
+#final{
+    font-family: 'Lobster', cursive;
+    font-size: x-large;
+    text-align: center;
+}
+
+#choose{
+    font-family: 'Patrick Hand', cursive;
+    font-size: x-large;
+    text-align: center;
+}

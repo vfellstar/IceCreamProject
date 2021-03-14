@@ -1,0 +1,470 @@
+/**
+    * This file was created by Vincent Taylor on 15/02/2021.
+    *
+    * Version 1.0
+    */
+/*Standardise text inside the whole page*/
+/* both  sizes will uses these aspects throughout*/
+
+#title {
+    background-image: url("https://waterstreet.blog/wp-content/uploads/2019/07/summer-ice-cream-2200x1333.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: blue;
+}
+
+header {
+    display: block;
+    position: relative;
+}
+
+body {
+    color: dodgerblue;
+}
+
+h1,
+h2,
+nav {
+    font-family: 'Lobster', cursive;
+    font-weight: normal;
+}
+
+h1 {
+    margin: 0% 0% 0% 0%;
+    color: rgb(255, 255, 255);
+    padding: 10px 0% 5px 0%;
+}
+
+h2 {
+    color: rgb(0, 0, 0);
+}
+
+ul li {
+    text-align: right;
+    margin: 47px;
+    font-family: 'Lobster', cursive;
+    cursor: pointer;
+}
+
+input[type=number] {
+    width: 35px;
+}
+
+p {
+    font-family: 'Lobster', cursive;
+}
+/*Backgrounds*/
+/*Image taken from arcticbuzzicecream.com*/
+
+#checkOrders {
+    color: black;
+}
+
+#vanilla {
+    background: url("https://arcticbuzzicecream.com/wp-content/uploads/2019/03/AdobeStock_208955943-1.jpeg");
+    background-repeat: no-repeat;
+}
+
+#honeycomb {
+    background: url("https://raw.githubusercontent.com/vfellstar/IceCreamProject/master/honeycomb.png");
+    background-repeat: no-repeat;
+}
+
+#rum_and_raisin {
+    background: url("https://raw.githubusercontent.com/vfellstar/IceCreamProject/master/rumraisin.png");
+}
+
+#mint {
+    background: url("https://raw.githubusercontent.com/vfellstar/IceCreamProject/master/mint.png");
+    background-repeat: no-repeat;
+}
+
+#cherry {
+    background: url("https://raw.githubusercontent.com/vfellstar/IceCreamProject/master/cherry.png");
+    background-repeat: no-repeat;
+}
+/*Image taken from blog.equalexchange.coop*/
+
+#chocolate {
+    background: url("https://blog.equalexchange.coop/wp-content/uploads/2017/01/chocolate-icecream.jpg");
+    background-repeat: no-repeat;
+}
+/*Image taken from assets.epicurious.com*/
+
+#salted_caramel {
+    background: url("https://assets.epicurious.com/photos/573e2d30906a7c835e961081/master/pass/caramel.jpg");
+    background-repeat: no-repeat;
+}
+/*Image taken from cloudinary*/
+
+#strawberry {
+    background: url("https://res.cloudinary.com/fleetnation/image/private/c_fit,w_1120/g_south,l_text:style_gothic2:%C2%A9%20David%20Izquierdo,o_20,y_10/g_center,l_watermark4,o_25,y_50/v1496139166/ty64gzuzjele6wasptgc.jpg");
+    background-repeat: no-repeat;
+}
+
+#orders {
+    background-color: rgba(151, 146, 146, 0.4);
+}
+/* =================================================================================================================================================================
+When screen is large */
+
+@media (min-width: 1000px) {
+    #title {
+        height: 350px;
+        border-left: solid;
+        border-right: solid;
+    }
+    #title h1 {
+        text-align: center;
+        font-size: 50px;
+        color: black;
+        transform: translateY(20px) translateX(-20px);
+    }
+    ul li {
+        display: inline;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    nav ul {
+        transform: translateY(140px) translateX(22px);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: large;
+    }
+    nav a {
+        font-size: 23px;
+        font-weight: bolder;
+    }
+    body {
+        background: rgb(197, 179, 98);
+        position: relative;
+        max-width: 130ch;
+        margin: 0 auto 0 auto;
+    }
+    #main-screen {
+        background: white;
+    }
+    main {
+        background: white;
+        max-width: 100%;
+        font-size: 2.6ch;
+        top: 0;
+        bottom: 0;
+    }
+    #fix {
+        position: sticky;
+        z-index: 3000;
+    }
+    section {
+        margin: 0;
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+    main li p {
+        margin: 5px;
+    }
+    main li {
+        margin: 35px;
+    }
+    h2,
+    p {
+        margin: 2.5% 80px;
+    }
+    h1 {
+        font-size: 8ch;
+    }
+    nav {
+        transform: translateX(-10%) translateY(180%);
+        width: 112%;
+    }
+    nav ul {
+        padding-left: 0;
+        bottom: 0;
+        text-align: center;
+        margin-left: 50px;
+    }
+    nav ul li {
+        display: inline;
+        text-align: center;
+        font-size: 2ch;
+        margin: auto;
+    }
+    nav ul li+li {
+        margin-left: 1.5%;
+    }
+    figure {
+        box-sizing: border-box;
+        width: 60%;
+        border: 4px solid rgba(151, 146, 146, 0.4);
+        border-radius: 6%;
+        text-align: center;
+        margin-left: 200px;
+    }
+    figure button {
+        margin-bottom: 20px;
+    }
+    blockquote {
+        font-style: italic;
+    }
+    .no-italics {
+        font-style: normal !important;
+    }
+    footer p {
+        position: relative;
+        background-color: black;
+        max-width: 100ch;
+        padding: 0;
+        text-indent: 25%;
+        padding: 5ch 0ch 5ch 0ch;
+        margin-bottom: 0;
+    }
+    #orders {
+        transform: translateX(-20px);
+        min-height: 200px;
+        width: 680px;
+    }
+    #smallSurcharge {
+        display: none;
+    }
+    #totalCost {
+        transform: translateX(80px) translateY(45px);
+    }
+    #submitForm {
+        margin-top: 30px;
+        background-image: url("https://images.vexels.com/media/users/3/143409/isolated/preview/660b9f099fff3269ede645377bc511bf-ice-cream-cartoon-by-vexels.png");
+    }
+}
+/* =================================================================================================================================================================
+When screen is small - mainly optimised for mobile phones and tablets. */
+
+@media (max-width: 1000px) {
+    body {
+        /* this removed the margins and maximised available space for the webpage - also stopped left/right scrolling*/
+        font-size: 3.5vw;
+        margin: 0 0 0 0;
+        overflow-x: hidden;
+        background-color: coral;
+    }
+    main {
+        margin-bottom: 5%;
+        padding: 5.5% 0% 5.5% 0%;
+        background-color: coral;
+        margin: 0;
+        padding: 0;
+        margin-top: 10px;
+    }
+    main li {
+        padding: 0;
+        margin: 0;
+    }
+    main ul {
+        padding: 0;
+        margin: 0;
+    }
+    #title {
+        position: sticky;
+        width: 100%;
+    }
+    h1,
+    h2,
+    p {
+        padding-left: 2.1vw;
+        margin: 0;
+    }
+    #scList {
+        transform: translateY(10px);
+    }
+    #surcharge {
+        display: none;
+        margin-bottom: 5px;
+    }
+    h1 {
+        /*the text was translated slightly to made it look more like the example (more vertically central)*/
+        font-size: 8vw;
+        transform: translateY(25%);
+    }
+    p,
+    li {
+        padding-right: 3vw;
+    }
+    a {
+        margin-right: 10px;
+    }
+    ul li {
+        transform: translateY(-20px);
+        padding: 0;
+        margin: 10px;
+    }
+    ul {
+        list-style: none;
+        display: list-item;
+    }
+    nav ul {
+        text-decoration: none;
+        text-align: right;
+        padding-left: 0;
+        list-style: none;
+        position: sticky;
+        padding: 0;
+        margin-bottom: 0;
+        transform: translateY(-30px) translateX(-5px);
+
+    }
+    nav li {
+        width: 99vw;
+        margin: auto;
+        cursor: pointer;
+    }
+    ul {
+        padding-left: 7vw;
+    }
+    blockquote {
+        margin-left: 5.7vw;
+        width: 95%;
+    }
+    footer p {
+        padding: 1vw 0vw 1vw 0vw;
+        text-align: center;
+    }
+    figure,
+    #orders {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+    #orders {
+        padding-top: 10px;
+        height: 200px;
+        width: 100%;
+    }
+    iframe {
+        border-style: none;
+        text-align: center;
+    }
+    #finish p {
+        color: black;
+    }
+}
+/*For element properties that apply to both screen sizes */
+
+ul {
+    list-style-type: none;
+}
+
+nav a {
+    text-decoration: none !important;
+    color: rgb(0, 0, 0);
+    font-size: 22px;
+}
+
+nav li:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+nav li:hover .li {
+    color: yellow;
+    opacity: 100% !important;
+}
+
+footer {
+    background: rgb(0, 0, 0);
+    width: 100%;
+    color: white;
+}
+
+#totalCost {
+    color: black;
+}
+
+#checkOrders p {
+    background-color: black;
+}
+
+#checkOrders table {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    margin-left: 20px !important;
+}
+
+#checkOrders tbody tr th,
+#checkOrders tbody tr td {
+    margin-right: 70px !important;
+}
+
+button {
+    background-color: #cfae1acc;
+    color: #000000;
+    padding: 10px;
+    border-radius: 20px;
+    -webkit-border-radius: 19px 0px;
+    margin: 10px;
+    box-shadow: 2px 2px 6px rgba(163, 65, 0, 0.363);
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+select {
+    border-radius: 10px;
+    height: 40px;
+    width: 50px;
+    font-size: large;
+    box-shadow: 2px 2px 6px rgba(163, 65, 0, 0.829);
+    text-align: center;
+}
+
+h2 {
+    background-color: rgba(255, 255, 255, 0.247);
+    max-width: 200px;
+    text-align: center;
+}
+
+nav ul li {
+    background-color: rgba(255, 255, 255, 0.247);
+}
+button{
+    background-color: white;
+    color: black;
+    position:relative;
+    height:30px;
+    padding:0em 2em;
+    cursor: pointer;
+    transition:750ms;
+    outline:none;
+    font-family: "Source Code Pro";
+}
+button:hover, nav ul li a:hover{
+    background: lightskyblue;
+    color: darkblue;
+}
+button:before,
+button:after, nav ul li a:before, nav ul li a:after{
+    content:'';
+    position:absolute;
+    top:0.1px;
+    right:0.1px;
+    height:3px;
+    width:0;
+    background: #00FF00;
+    transition:900ms;
+}
+button:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+button:hover:before,button:hover:after{
+    width:80%;
+    transition:700ms;
+}
+figure{
+    background: linear-gradient(to bottom, lightseagreen, white);
+
+}
+body {
+    background: url("https://i.pinimg.com/originals/66/97/a3/6697a3872d6894af5a5118f7b0904500.jpg");
+
+}
+

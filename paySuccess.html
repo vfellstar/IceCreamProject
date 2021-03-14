@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pay Success!</title>
+    <link rel="stylesheet" href="paySuccess.css">
+</head>
+<body>
+
+<div class="Success">
+    <form>
+        <p id="message">You have paid successfully!</p>
+        <p id="final">Thank you for your order!</p>
+        <p id="countDown"></p>
+    </form>
+    <div style="margin-top: 600px"></div>
+</div>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+<script>
+    var cusname=window.localStorage.getItem('cusname');
+    var choose=window.localStorage.getItem('choose');
+    var order=window.localStorage.getItem('order');
+    var email=window.localStorage.getItem('email');
+    var phoneNumber=window.localStorage.getItem('phoneNumber');
+    var totalCost=window.localStorage.getItem('totalCost');
+
+    var order1 = JSON.parse(order);
+
+    var data1={};
+    var time = new Date();
+    var year=time.getFullYear();
+    var month=time.getMonth()+1;
+    var day=time.getDate();
+    var hour = time.getHours();
+    var minu = time.getMinutes();
+    var sec=time.getSeconds();
+    var time_now=''+year+'-'+month+'-'+day+' '+hour+':'+minu+':'+sec+'';
+    data1.time=time_now;
+    var ordernum=year+month+day;
+    if(choose=='delivery'){
+        var address=window.localStorage.getItem('address');
+    }
+    else {var address='No data.';}
+
+    var para = document.createElement("p");
+    para.id = "choose";
+    data1.name=cusname.toString();
+    if(choose=='collection'){
+        var txt = document.createTextNode("Dear " + cusname+", \rYour order will be prepared in 10 minutes. Please come"+
+            "to pick it up as soon as possible!");
+    }
+    else {txt = document.createTextNode("Dear " + cusname+", \rYou will get your order between 9-18. ");}
+    var pinsert = document.getElementById("final");
+    para.appendChild(txt);
+    pinsert.parentNode.insertBefore(para, pinsert);
+
+    var cost=totalCost.substr((totalCost.indexOf('£'))+1,totalCost.length-1);
+
+    var cusnum=cusname+phoneNumber;
+
+    data1.ordernum=ordernum;
+    data1.cusnum=cusnum;
+    data1.order=order1;
+    data1.cost=cost;
+    data1.email=email;
+    data1.address=address;
+    data1.phoneNumber=phoneNumber;
+    console.log(data1);
+
+    $.ajax({
+        url:'inputToDB.php',
+        type:"POST",
+        data: data1,
+        success:function (res){
+            console.log(res);
+            alert('post success');
+        },
+        error:function (err){
+            console.log(err);
+            alert("error"+XMLHttpRequest.status+"---"+XMLHttpRequest.readyState);
+        }
+    })
+
+
+</script>
+
+</body>
+</html>
