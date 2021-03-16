@@ -1,0 +1,357 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap');
+
+body {
+    background-image: url("https://papers.co/wallpaper/papers.co-sh72-pastel-icecream-gradation-blur-36-3840x2400-4k-wallpaper.jpg");
+    font-family: raleway;
+    color: white;
+    margin: 0;
+    position: relative;
+    max-width: 130ch;
+    margin: 0 auto 0 auto;
+    overflow: hidden;
+    border: dashed;
+    height: 850px;
+    padding-right: 30px;
+    margin-top: 50px;
+    box-shadow: 1px 18px 46px black, -15px -15px 48px grey;
+}
+.popup .content {
+    top: 50%;
+    left: 60%;
+    color:black;
+    transform: translateX(50%) translateY(40%) scale(0);
+    width: 300px;
+    height: 650px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 38px 38px 56px #1e1e1e, -25px -25px 38px #1e1e1e;
+    z-index: 1;
+}
+.popup {
+    transform: translateX(800px) translateY(350px);
+    height: 1px;
+}
+.size-buttons {
+    transform: translateX(78%);
+    width: 40px;
+    margin: 5px, 0px, 5px, 5px;
+    padding: 0px;
+    color: cornflowerblue;
+    font-size: 15px;
+    font-weight: 100;
+    border-radius: 40px;
+    background: #262626;
+    box-shadow: 5px 5px 5px #1e1e1e, -5px -5px 5px #1e1e1e;
+    transition: box-shadow .35s ease !important;
+    outline: none;
+}
+.size-buttons:active {
+    background: linear-gradient(240deg, black, white);
+    box-shadow: 3px 5px 10px white, -5px -5px 10px blue;
+}
+.follow {
+    text-align: center;
+    transform: translateX(11%) translateY(-10%);
+}
+.popup .close-btn {
+    height: 40px;
+    transform: translateX(430%);
+    font-size: 6px;
+    color: white;
+    font-size: 30px;
+    border-radius: 30%;
+    padding: 2px 5px 7px 5px;
+    background: black;
+    box-shadow: 5px 5px 15px #1e1e1e, -5px -5px 15px #1e1e1e;
+
+}
+
+
+.popup.active .content {
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    color: black;
+}
+
+a {
+    font-weight: 600;
+    color: white;
+}
+.input-field .validate {
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 15px;
+    color: #bfc0c0;
+    background: white;
+    box-shadow: inset 5px 5px 5px #232323, inset -5px -5px 5px #292929;
+    outline: none;
+}
+
+.choiceButton {
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0;
+    width: 250px;
+    height: 65px;
+    border-radius: 40px;
+    position: absolute;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    background: #262626;
+    box-shadow: 8px 8px 55px #1e1e1e, -15px -15px 15px #1e1e1e;
+    transition: box-shadow .35s ease !important;
+    outline: none;
+}
+.choiceButton:active{
+    background: linear-gradient(240deg, black, white);
+    box-shadow: 3px 5px 10px white, -5px -5px 10px blue;
+}
+#vanillaDF {
+    transform: translateY(-130%);
+    left: 80%;
+}
+#dfvCard, #vanillaDF {
+    border: none;
+    background-image: linear-gradient(to right, white, yellow) !important;
+}
+
+#vanilla {
+    transform: translateY(10%);
+    left: 80%;
+
+}
+#vcard, #vanilla {
+    border: none;
+    background-image: linear-gradient(to right, pink, white);
+}
+
+#honeycomb {
+    transform: translateY(150%);
+    left: 80%;
+
+}
+#hccard, #honeycomb {
+    background-image: linear-gradient(to right, orange, white);
+}
+
+#rumraisin {
+    transform: translateY(290%);
+    left: 80%;
+
+}
+#rumraisin, #rrcard {
+    background-image: linear-gradient(to right, #57414A, white);
+}
+
+#mint {
+transform: translateY(430%);
+left: 80%;
+
+}
+#mcard, #mint{
+background-image: linear-gradient(to right, #98ff98, white);
+}
+
+#cherry {
+    transform: translateY(570%);
+    left: 80%;
+
+}
+#cherryCard, #cherry {
+    background-image: linear-gradient(to right, #f7022a, white);
+}
+
+#chocolate {
+    transform: translateY(710%);
+    left: 80%;
+
+}
+#choCard, #chocolate {
+    background-image: linear-gradient(to right, brown, white);
+}
+
+
+#saltedcaramel {
+    transform: translateY(850%);
+    left: 80%;
+
+}
+#scCard, #saltedcaramel {
+    background-image: linear-gradient(to right, chocolate, white);
+}
+
+
+#strawberry {
+    transform: translateY(990%);
+    left: 80%;
+
+}
+#strawCard, #strawberry {
+    background-image: linear-gradient(to right, #fc5a8d, white);
+}
+
+
+
+.confirmButton {
+    transform: translateY(170%);
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 20px;
+    padding: 20px 30px;
+    border-radius: 40px;
+    border: none;
+    background: #262626;
+    box-shadow: 8px 8px 15px #202020, -8px -8px 15px #2c2c2c;
+    transition: box-shadow .35s ease !important;
+    outline: none;
+}
+
+.confirmButton:active {
+    background: linear-gradient(145deg,#222222, #292929);
+    box-shadow: 3px 5px 10px white, -5px -5px 10px blue;
+    border: none;
+    outline: none;
+}
+
+p {
+    color: #bfc0c0;
+    padding: 20px;
+}
+.quantity-selection {
+    transform: translateX(25%) translateY(80%);
+    border-radius: 5%;
+    box-shadow: 5px 5px 5px #1e1e1e, -5px -5px 5px #1e1e1e;
+}
+
+.quantity-selection button {
+    width:50px;
+    height:50px;
+    margin: 5px, 0px, 5px, 5px;
+    color: cornflowerblue;
+    font-size: 15px;
+    font-weight: 100;
+    border-radius: 50%;
+    background: #262626;
+    box-shadow: 5px 5px 5px #1e1e1e, -5px -5px 5px #1e1e1e;
+    transition: box-shadow .35s ease !important;
+}
+.quantity-selection button:active {
+    background: linear-gradient(240deg, black, white);
+    box-shadow: 3px 5px 10px white, -5px -5px 10px blue;
+}
+.quantity-selection p {
+    width: 80px;
+    height:50px;
+    font-size: xx-large;
+    background: white;
+    text-align: center;
+    box-shadow: inherit;
+    padding: 0px;
+    margin: 0px;
+}
+#current-selection {
+    text-shadow: 0px 0px 6px rgba(255, 165, 0, 0.7);
+}
+#cart {
+    transform: translateY(-10px);
+    position: absolute;
+    border: dotted;
+    border-color: red;
+    width: 500px;
+    height: 680px;
+    background: white;
+    box-shadow: 1px 10px 26px pink, -15px -15px 48px blue;
+    color: black;
+    overflow: scroll;
+    font-family: Arial;
+    text-decoration: solid;
+    font-size: 20px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    background-image: linear-gradient(to left, violet, indigo, red, green, blue, black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+    #cart:active {
+        box-shadow: 8px 18px 26px blue, -15px -15px 28px pink;
+    }
+    #cart h2 {
+        color: black;
+        text-align: center;
+        text-decoration: overline underline;
+
+    }
+    #cart::-webkit-scrollbar {
+        display: none;
+    }
+
+
+#reset_button, #submit {
+
+    color: #000000;
+    height:40px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px 0px;
+    margin: 10px;
+    box-shadow: 2px 2px 6px rgba(163, 65, 0, 0.363);
+    font-weight: bolder;
+    cursor: pointer;
+}
+#reset_button {
+    background-image: radial-gradient(red, pink);
+    transform: translateX(290px) translateY(620px);
+}
+#submit {
+    transform: translateX(70px) translateY(620px);
+    width: 200px;
+    background-image: linear-gradient(to right, blue, white);
+    color: black;
+}
+    #reset_button:after, #reset_button:before, #submit:after, #submit:before{
+        content: '';
+        position: absolute;
+        top: 0.1px;
+        right: 0.1px;
+        height: 3px;
+        width: 0;
+
+        transition: 900ms;
+    }
+#reset_button:after, #reset_button:before {
+    background: red;
+}
+        #submit:after, #submit:before {
+            background: blue;
+        }
+        #reset_button:after, #submit:after {
+            right: inherit;
+            top: inherit;
+            left: 0;
+            bottom: 0;
+        }
+    #reset_button:hover:before, #reset_button:hover:after, #submit:hover:before, #submit:hover:after {
+        width: 80%;
+        transition: 700ms;
+    }
+#checkOrders {
+    transform: translateX(30%);
+}
+#totalCost {
+    font-size: x-large;
+    color: black;
+}

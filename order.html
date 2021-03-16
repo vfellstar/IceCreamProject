@@ -1,0 +1,637 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Order</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="order.css" />
+    <script src="order.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <!--Shopping cart-->
+    <h1 id="current-selection">Select a flavour ></h1>
+    <div>
+        <figure id="cart">
+            <h2>Shopping Basket</h2>
+            <p id="totalCost"></p>
+            <table id="checkOrders">
+            </table>
+        </figure>
+    </div>
+
+    <!-- Dairy Free - Vanilla-->
+    <div class="popup" id="popup1">
+
+        <div class="content" id="dfvCard">
+
+            <div>
+                <button class="close-btn" onclick="popupClose1()">x</button>
+            </div>
+            <h1>Dairy Free Vanilla</h1>
+            <div class="follow">
+                <table>
+                    <tr>
+                        <th>
+                            Size Selected:
+                        </th>
+                        <th id="size-selected1">
+                            Please select a size
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_small()">S</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_medium()">M</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_large()">L</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_xl()">XL</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_pressxxl()">XXL</button>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="input-field">
+                <table class="quantity-selection">
+                    <tr>
+                        <th>
+                            <button onclick="decreaseSelected()">
+                                -
+                            </button>
+                        </th>
+                        <th>
+                            <p id="quantity-selected1">0</p>
+                        </th>
+                        <th>
+                            <button onclick="increaseSelected()">
+                                +
+                            </button>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <button class="confirmButton" onclick="confirmBtnPush()">Add to basket</button>
+
+
+        </div>
+    </div>
+    <button onclick="popup1()" class="choiceButton" id="vanillaDF">Dairy Free Vanilla</button>
+
+
+    <!-- Plain Vanilla-->
+    <div class="popup" id="popup2">
+
+        <div class="content" id="vcard">
+
+            <div>
+                <button class="close-btn" onclick="popupClose2()">x</button>
+            </div>
+            <h1>Plain Vanilla</h1>
+            <div class="follow">
+                <table>
+                    <tr>
+                        <th>
+                            Please select a size
+                        </th>
+                        <th id="size-selected2">
+                            Small
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_small()">S</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_medium()">M</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_large()">L</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_xl()">XL</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_pressxxl()">XXL</button>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="input-field">
+                <table class="quantity-selection">
+                    <tr>
+                        <th>
+                            <button onclick="decreaseSelected()">
+                                -
+                            </button>
+                        </th>
+                        <th>
+                            <p id="quantity-selected2">0</p>
+                        </th>
+                        <th>
+                            <button onclick="increaseSelected()">
+                                +
+                            </button>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <button class="confirmButton" onclick="confirmBtnPush()">Add to basket</button>
+
+
+        </div>
+    </div>
+    <button onclick="popup2()" class="choiceButton" id="vanilla">Vanilla</button>
+
+    <!--Honeycomb-->
+    <div class="popup" id="popup3">
+
+        <div class="content" id="hccard">
+
+            <div>
+                <button class="close-btn" onclick="popupClose3()">x</button>
+            </div>
+            <h1>Honeycomb</h1>
+            <div class="follow">
+                <table>
+                    <tr>
+                        <th>
+                            Please select a size
+                        </th>
+                        <th id="size-selected3">
+                            Small
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_small()">S</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_medium()">M</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_large()">L</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_xl()">XL</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_pressxxl()">XXL</button>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="input-field">
+                <table class="quantity-selection">
+                    <tr>
+                        <th>
+                            <button onclick="decreaseSelected()">
+                                -
+                            </button>
+                        </th>
+                        <th>
+                            <p id="quantity-selected3">0</p>
+                        </th>
+                        <th>
+                            <button onclick="increaseSelected()">
+                                +
+                            </button>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <button class="confirmButton" onclick="confirmBtnPush()">Add to basket</button>
+
+
+        </div>
+    </div>
+    <button onclick="popup3()" class="choiceButton" id="honeycomb">Honeycomb</button>
+
+    <!--Rum and Raisin-->
+    <div class="popup" id="popup4">
+
+        <div class="content" id="rrcard">
+
+            <div>
+                <button class="close-btn" onclick="popupClose4()">x</button>
+            </div>
+            <h1>Rum and Raisin</h1>
+            <div class="follow">
+                <table>
+                    <tr>
+                        <th>
+                            Please select a size
+                        </th>
+                        <th id="size-selected4">
+                            Small
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_small()">S</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_medium()">M</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_large()">L</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_xl()">XL</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_pressxxl()">XXL</button>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="input-field">
+                <table class="quantity-selection">
+                    <tr>
+                        <th>
+                            <button onclick="decreaseSelected()">
+                                -
+                            </button>
+                        </th>
+                        <th>
+                            <p id="quantity-selected4">0</p>
+                        </th>
+                        <th>
+                            <button onclick="increaseSelected()">
+                                +
+                            </button>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <button class="confirmButton" onclick="confirmBtnPush()">Add to basket</button>
+
+
+        </div>
+    </div>
+    <button onclick="popup4()" class="choiceButton" id="rumraisin">Rum and Raisin</button>
+    <!--Mint-->
+    <div class="popup" id="popup5">
+
+        <div class="content" id="mcard">
+
+            <div>
+                <button class="close-btn" onclick="popupClose5()">x</button>
+            </div>
+            <h1>Mint</h1>
+            <div class="follow">
+                <table>
+                    <tr>
+                        <th>
+                            Please select a size
+                        </th>
+                        <th id="size-selected5">
+                            Small
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_small()">S</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_medium()">M</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_large()">L</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_xl()">XL</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_pressxxl()">XXL</button>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="input-field">
+                <table class="quantity-selection">
+                    <tr>
+                        <th>
+                            <button onclick="decreaseSelected()">
+                                -
+                            </button>
+                        </th>
+                        <th>
+                            <p id="quantity-selected5">0</p>
+                        </th>
+                        <th>
+                            <button onclick="increaseSelected()">
+                                +
+                            </button>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <button class="confirmButton" onclick="confirmBtnPush()">Add to basket</button>
+
+
+        </div>
+    </div>
+    <button onclick="popup5()" class="choiceButton" id="mint">Mint</button>
+    <!--Cherry-->
+    <div class="popup" id="popup6">
+
+        <div class="content" id="cherryCard">
+
+            <div>
+                <button class="close-btn" onclick="popupClose6()">x</button>
+            </div>
+            <h1>Cherry</h1>
+            <div class="follow">
+                <table>
+                    <tr>
+                        Please select a size
+                        </th>
+                        <th id="size-selected6">
+                            Small
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_small()">S</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_medium()">M</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_large()">L</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_xl()">XL</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_pressxxl()">XXL</button>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="input-field">
+                <table class="quantity-selection">
+                    <tr>
+                        <th>
+                            <button onclick="decreaseSelected()">
+                                -
+                            </button>
+                        </th>
+                        <th>
+                            <p id="quantity-selected6">0</p>
+                        </th>
+                        <th>
+                            <button onclick="increaseSelected()">
+                                +
+                            </button>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <button class="confirmButton" onclick="confirmBtnPush()">Add to basket</button>
+
+
+        </div>
+    </div>
+    <button onclick="popup6()" class="choiceButton" id="cherry">Cherry</button>
+    <!--Chocolate-->
+    <div class="popup" id="popup7">
+
+        <div class="content" id="choCard">
+
+            <div>
+                <button class="close-btn" onclick="popupClose7()">x</button>
+            </div>
+            <h1>Chocolate</h1>
+            <div class="follow">
+                <table>
+                    <tr>
+                        <th>
+                            Please select a size
+                        </th>
+                        <th id="size-selected7">
+                            Small
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_small()">S</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_medium()">M</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_large()">L</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_xl()">XL</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_pressxxl()">XXL</button>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="input-field">
+                <table class="quantity-selection">
+                    <tr>
+                        <th>
+                            <button onclick="decreaseSelected()">
+                                -
+                            </button>
+                        </th>
+                        <th>
+                            <p id="quantity-selected7">0</p>
+                        </th>
+                        <th>
+                            <button onclick="increaseSelected()">
+                                +
+                            </button>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <button class="confirmButton" onclick="confirmBtnPush()">Add to basket</button>
+
+
+        </div>
+    </div>
+    <button onclick="popup7()" class="choiceButton" id="chocolate">Chocolate</button>
+    <!--Salted Caramel-->
+    <div class="popup" id="popup8">
+
+        <div class="content" id="scCard">
+
+            <div>
+                <button class="close-btn" onclick="popupClose8()">x</button>
+            </div>
+            <h1>Salted Caramel</h1>
+            <div class="follow">
+                <table>
+                    <tr>
+                        <th>
+                            Please select a size
+                        </th>
+                        <th id="size-selected8">
+                            Small
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_small()">S</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_medium()">M</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_large()">L</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_xl()">XL</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_pressxxl()">XXL</button>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="input-field">
+                <table class="quantity-selection">
+                    <tr>
+                        <th>
+                            <button onclick="decreaseSelected()">
+                                -
+                            </button>
+                        </th>
+                        <th>
+                            <p id="quantity-selected8">0</p>
+                        </th>
+                        <th>
+                            <button onclick="increaseSelected()">
+                                +
+                            </button>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <button class="confirmButton" onclick="confirmBtnPush()">Add to basket</button>
+
+
+        </div>
+    </div>
+    <button onclick="popup8()" class="choiceButton" id="saltedcaramel">Salted Caramel</button>
+    <!--Strawberry-->
+    <div class="popup" id="popup9">
+
+        <div class="content" id="strawCard">
+
+            <div>
+                <button class="close-btn" onclick="popupClose9()">x</button>
+            </div>
+            <h1>Strawberry</h1>
+            <div class="follow">
+                <table>
+                    <tr>
+                        <th>
+                            Please select a size
+                        </th>
+                        <th id="size-selected9">
+                            Small
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_small()">S</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_medium()">M</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_large()">L</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_press_xl()">XL</button>
+                        </th>
+                        <th>
+                            <button class="size-buttons" onclick="size_button_pressxxl()">XXL</button>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="input-field">
+                <table class="quantity-selection">
+                    <tr>
+                        <th>
+                            <button onclick="decreaseSelected()">
+                                -
+                            </button>
+                        </th>
+                        <th>
+                            <p id="quantity-selected9">0</p>
+                        </th>
+                        <th>
+                            <button onclick="increaseSelected()">
+                                +
+                            </button>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <button class="confirmButton" onclick="confirmBtnPush()">Add to basket</button>
+
+
+        </div>
+    </div>
+    <button onclick="popup9()" class="choiceButton" id="strawberry">Strawberry</button>
+
+
+    <button onclick="resetPanel()" class="choiceButton" id="reset_button">Reset Order</button>
+    <button onclick="confirmOrder()" class="choiceButton" id="submit">Confirm Order</button>
+</body>
+</html>
